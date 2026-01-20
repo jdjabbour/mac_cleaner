@@ -2,7 +2,9 @@ import subprocess
 import sys
 import platform
 
-def flush_dns_mac():
+from src.app_utils.ensure_macos import ensure_macos
+
+def flushing_dns():
     try:
         print("Flushing DNS cache on macOS...")
         subprocess.run(
@@ -18,12 +20,8 @@ def flush_dns_mac():
         print("Error flushing DNS cache:", e)
         sys.exit(1)
 
-def main():
-    if platform.system() != "Darwin":
-        print("This script is intended for macOS only.")
-        sys.exit(1)
+def flush_mac_dns():
+    ensure_macos()
 
-    flush_dns_mac()
+    flushing_dns()
 
-if __name__ == "__main__":
-    main()

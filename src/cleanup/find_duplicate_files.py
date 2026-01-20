@@ -3,6 +3,11 @@ import hashlib
 from collections import defaultdict
 from pathlib import Path
 
+
+"""
+needs param => directory to search for dupes
+"""
+
 # -------- CONFIG --------
 HASH_CHUNK_SIZE = 1024 * 1024  # 1MB chunks (fast & memory safe)
 # ------------------------

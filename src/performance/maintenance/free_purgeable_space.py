@@ -4,7 +4,7 @@ import sys
 import tempfile
 import os
 
-from app_utils.ensure_macos import ensure_macos
+from src.app_utils.ensure_macos import ensure_macos
 
 
 def run(cmd):
@@ -60,7 +60,7 @@ def force_disk_pressure(size_gb=10):
             os.remove(temp_file)
             print("Temporary file removed.")
 
-def main():
+def purge_space():
     ensure_macos()
 
     print("🚀 Starting purgeable space cleanup (requires sudo)...\n")
@@ -72,5 +72,3 @@ def main():
     print("\n✅ Cleanup complete.")
     print("Rebooting will often free additional purgeable space.")
 
-if __name__ == "__main__":
-    main()

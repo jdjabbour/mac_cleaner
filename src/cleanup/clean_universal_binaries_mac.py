@@ -3,7 +3,7 @@ import platform
 import sys
 from pathlib import Path
 
-from app_utils.ensure_macos import ensure_macos
+from src.app_utils.ensure_macos import ensure_macos
 
 APP_DIRS = [
     Path("/Applications"),
@@ -35,7 +35,7 @@ def thin_binary(binary, remove_arch):
         check=True
     )
 
-def main():
+def clean_binaries():
     ensure_macos()
 
     host_arch = get_arch()
@@ -77,5 +77,4 @@ def main():
     print("\n✅ Universal binary cleanup complete.")
     print("You may need to re-run after app updates.")
 
-if __name__ == "__main__":
-    main()
+

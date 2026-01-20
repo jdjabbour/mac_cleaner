@@ -5,7 +5,7 @@ import platform
 import sys
 from pathlib import Path
 
-from app_utils.ensure_macos import ensure_macos
+from src.app_utils.ensure_macos import ensure_macos
 
 CLEAN_TARGETS = {
     "User Cache Files": [
@@ -89,7 +89,7 @@ def clean_language_files():
     print("  macOS manages these automatically.")
     print("  Manual removal is unsafe. Skipped.")
 
-def main():
+def clean_system_junk():
     ensure_macos()
 
     print("🧹 macOS System Junk Cleaner")
@@ -105,5 +105,3 @@ def main():
     print("\n✅ Cleanup complete.")
     print("Empty Trash to reclaim disk space.")
 
-if __name__ == "__main__":
-    main()

@@ -2,7 +2,7 @@ import subprocess
 import platform
 import sys
 
-from app_utils.ensure_macos import ensure_macos
+from src.app_utils.ensure_macos import ensure_macos
 
 """
 How to verify reindexing status
@@ -33,10 +33,8 @@ def reindex_spotlight():
     print("\n✅ Spotlight reindex initiated.")
     print("Indexing continues in the background.")
 
-def main():
+def reindex_spotlight():
     ensure_macos()
     print("🚀 Starting Spotlight reindex (requires sudo)...")
     reindex_spotlight()
 
-if __name__ == "__main__":
-    main()

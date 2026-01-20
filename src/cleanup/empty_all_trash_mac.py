@@ -2,7 +2,7 @@ import os
 import shutil
 from pathlib import Path
 
-from app_utils.ensure_macos import ensure_macos
+from src.app_utils.ensure_macos import ensure_macos
 
 USER_TRASH = Path.home() / ".Trash"
 VOLUME_TRASH_ROOT = Path("/Volumes")
@@ -41,7 +41,7 @@ def empty_external_trash():
                 total += delete_contents(user_trash)
     return total
 
-def main():
+def empty_all_trash():
     ensure_macos()
 
     print("🧹 This will permanently delete all items in all Trash bins.")
@@ -57,5 +57,4 @@ def main():
 
     print(f"\n✅ Trash emptied. {deleted} items permanently deleted.")
 
-if __name__ == "__main__":
-    main()
+
